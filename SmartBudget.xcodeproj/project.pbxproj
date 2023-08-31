@@ -11,6 +11,7 @@
 		3CBB96A12AA0448500392CB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB96A02AA0448500392CB8 /* ContentView.swift */; };
 		3CBB96A32AA0448800392CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBB96A22AA0448800392CB8 /* Assets.xcassets */; };
 		3CBB96A62AA0448800392CB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBB96A52AA0448800392CB8 /* Preview Assets.xcassets */; };
+		3CBB96AF2AA045F300392CB8 /* BudgetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB96AE2AA045F300392CB8 /* BudgetClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		3CBB96A02AA0448500392CB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CBB96A22AA0448800392CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CBB96A52AA0448800392CB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3CBB96AE2AA045F300392CB8 /* BudgetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetClient.swift; sourceTree = "<group>"; };
+		3CBB96B02AA0463000392CB8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 		3CBB96922AA0448500392CB8 = {
 			isa = PBXGroup;
 			children = (
+				3CBB96B02AA0463000392CB8 /* README.md */,
 				3CBB969D2AA0448500392CB8 /* SmartBudget */,
 				3CBB969C2AA0448500392CB8 /* Products */,
 			);
@@ -55,6 +59,7 @@
 				3CBB96A02AA0448500392CB8 /* ContentView.swift */,
 				3CBB96A22AA0448800392CB8 /* Assets.xcassets */,
 				3CBB96A42AA0448800392CB8 /* Preview Content */,
+				3CBB96AE2AA045F300392CB8 /* BudgetClient.swift */,
 			);
 			path = SmartBudget;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CBB96A12AA0448500392CB8 /* ContentView.swift in Sources */,
+				3CBB96AF2AA045F300392CB8 /* BudgetClient.swift in Sources */,
 				3CBB969F2AA0448500392CB8 /* SmartBudgetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
