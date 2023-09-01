@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var cards: [Card] = []
+    
+    func getCards() async {
+        do {
+            cards = try await BudgetClient.shared.fetchEntityCards(at: URL(string: "https://jsonplaceholder.typicode.com/users")!)
+        } catch {
+            print("Error getting cards: ", error.localizedDescription)
+        }
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List {
+                ForEach(cards) { card in
+                    Text(card.name)
+                }
+            }
         }
-        .padding()
+        .task {
+            await getCards()
+        }
     }
 }
 

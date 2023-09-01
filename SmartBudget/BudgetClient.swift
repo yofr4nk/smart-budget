@@ -12,6 +12,11 @@ struct Budget: Decodable, Identifiable {
     let item: String
 }
 
+struct Card: Decodable, Identifiable {
+    let id: Int
+    let name: String
+}
+
 struct BudgetClient {
     
     static let shared = BudgetClient()
@@ -23,7 +28,7 @@ struct BudgetClient {
         case decodingError(Error)
     }
     
-    func fetchBudget(at url: URL) async throws -> [Budget] {
+    func getResource(at url: URL) async throws -> Data {
         
         let (data, response) = try await URLSession.shared.data(from: url)
         
@@ -31,9 +36,28 @@ struct BudgetClient {
             throw BudgetClientError.invalidResponse
         }
         
+        return data
+    }
+    
+    func fetchBudget(at url: URL) async throws -> [Budget] {
+        
+        let data = try await getResource(at: url)
+        
         do {
             return try JSONDecoder().decode([Budget].self, from: data)
         } catch {
+            throw BudgetClientError.decodingError(error)
+        }
+    }
+    
+    func fetchEntityCards(at url: URL) async throws -> [Card] {
+        
+        let data = try await getResource(at: url)
+        
+        do {
+            return try JSONDecoder().decode([Card].self, from: data)
+        } catch {
+            print("fetchEntityCards error: ", error)
             throw BudgetClientError.decodingError(error)
         }
     }
