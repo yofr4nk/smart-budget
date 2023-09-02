@@ -7,16 +7,6 @@
 
 import Foundation
 
-struct Budget: Decodable, Identifiable {
-    let id: Int
-    let item: String
-}
-
-struct Card: Decodable, Identifiable {
-    let id: Int
-    let name: String
-}
-
 struct BudgetClient {
     
     static let shared = BudgetClient()
@@ -39,12 +29,12 @@ struct BudgetClient {
         return data
     }
     
-    func fetchBudget(at url: URL) async throws -> [Budget] {
+    func fetchCardDetail(at url: URL) async throws -> Card {
         
         let data = try await getResource(at: url)
         
         do {
-            return try JSONDecoder().decode([Budget].self, from: data)
+            return try JSONDecoder().decode(Card.self, from: data)
         } catch {
             throw BudgetClientError.decodingError(error)
         }

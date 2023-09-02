@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  CardList.swift
 //  SmartBudget
 //
-//  Created by yofrank sanchez on 8/30/23.
+//  Created by yofrank sanchez on 9/1/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct CardList: View {
     @State private var cards: [Card] = []
     
     func getCards() async {
@@ -19,12 +19,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
+        NavigationView {
             List {
                 ForEach(cards) { card in
-                    Text(card.name)
+                    NavigationLink(
+                        destination: CardDetail(cardId: String(card.id))) {
+                            Text(card.name)
+                        }
                 }
-            }
+            }.navigationTitle("Card List")
         }
         .task {
             await getCards()
@@ -32,8 +35,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CardList_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CardList()
     }
 }
