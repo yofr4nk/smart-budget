@@ -29,13 +29,14 @@ struct BudgetClient {
         return data
     }
     
-    func fetchCardDetail(at url: URL) async throws -> Card {
+    func fetchCardExpenses(at url: URL) async throws -> [Expense] {
         
         let data = try await getResource(at: url)
         
         do {
-            return try JSONDecoder().decode(Card.self, from: data)
+            return try JSONDecoder().decode([Expense].self, from: data)
         } catch {
+            print("Error getting the card expenses detail: ", error)
             throw BudgetClientError.decodingError(error)
         }
     }
