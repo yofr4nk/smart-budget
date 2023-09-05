@@ -19,16 +19,21 @@ struct CardList: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(cards) { card in
-                    NavigationLink(
-                        destination: CardExpensesDetail(cardId: card.id, cardName: card.name)) {
-                            Text(card.name)
-                        }
+        VStack{
+            Text("Cards")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .frame(maxWidth: .infinity, alignment: .center)
+            
+            ScrollView(.vertical, showsIndicators: false){
+                VStack(spacing: 25){
+                    ForEach(cards) { card in
+                        CardRow(card: card)
+                    }
                 }
-            }.navigationTitle("Card List")
+            }
         }
+        .padding([.horizontal, .top])
         .task {
             await getCards()
         }

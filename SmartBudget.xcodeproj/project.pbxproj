@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CB0B8BF2AA6AAB5003B2718 /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0B8BE2AA6AAB5003B2718 /* CardRow.swift */; };
 		3CBB969F2AA0448500392CB8 /* SmartBudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB969E2AA0448500392CB8 /* SmartBudgetApp.swift */; };
 		3CBB96A12AA0448500392CB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB96A02AA0448500392CB8 /* ContentView.swift */; };
 		3CBB96A32AA0448800392CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBB96A22AA0448800392CB8 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CB0B8BE2AA6AAB5003B2718 /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
 		3CBB969B2AA0448500392CB8 /* SmartBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBB969E2AA0448500392CB8 /* SmartBudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBudgetApp.swift; sourceTree = "<group>"; };
 		3CBB96A02AA0448500392CB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				3CBB96B92AA2E77100392CB8 /* CardExpensesDetail.swift */,
 				3CBB96BC2AA2E91C00392CB8 /* CardList.swift */,
+				3CB0B8BE2AA6AAB5003B2718 /* CardRow.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				3CBB96A12AA0448500392CB8 /* ContentView.swift in Sources */,
 				3CBB96AF2AA045F300392CB8 /* BudgetClient.swift in Sources */,
+				3CB0B8BF2AA6AAB5003B2718 /* CardRow.swift in Sources */,
 				3CBB96B72AA2E54F00392CB8 /* Expense.swift in Sources */,
 				3CBB96BA2AA2E77100392CB8 /* CardExpensesDetail.swift in Sources */,
 				3CBB969F2AA0448500392CB8 /* SmartBudgetApp.swift in Sources */,

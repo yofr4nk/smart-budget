@@ -10,5 +10,7 @@ import Foundation
 struct Card: Decodable, Identifiable {
     let id: Int
     let name: String
+    let owner: String
+    let type: String
 }
 
