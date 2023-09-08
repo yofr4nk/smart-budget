@@ -9,9 +9,14 @@ import SwiftUI
 
 struct CardRow: View {
     var card: Card
+    var cardIndex: Int
+    var isExpanded: Bool
     
     var body: some View {
         GeometryReader{proxy in
+            let rect = proxy.frame(in: .named("CARDS"))
+            let offset = CGFloat(cardIndex * (isExpanded ? 10 : 120))
+            
             ZStack(alignment: .bottomLeading){
                 Image(card.type)
                     .resizable()
@@ -30,6 +35,7 @@ struct CardRow: View {
                 .padding(.bottom, 10)
                 .colorInvert()
             }
+            .offset(y: isExpanded ? offset : -rect.minY + offset)
         }
         .frame(height: 200)
     }
@@ -37,6 +43,10 @@ struct CardRow: View {
 
 struct CardRow_Previews: PreviewProvider {
     static var previews: some View {
-        CardRow(card: Card(id: 1, name: "Mock Name", owner: "Mock Owner", type: "Gold"))
+        CardRow(
+            card: Card(id: 1, name: "Mock Name", owner: "Mock Owner", type: "Gold"),
+            cardIndex: 0,
+            isExpanded: true
+        )
     }
 }
