@@ -26,14 +26,15 @@ struct CardRow: View {
                     Text(card.name)
                         .fontWeight(.bold)
                         .font(.title3)
+                        .foregroundColor(.white)
                     
                     Text(card.owner)
                         .font(.callout)
                         .fontWeight(.bold)
+                        .foregroundColor(.white)
                 }
                 .padding()
                 .padding(.bottom, 10)
-                .colorInvert()
             }
             .offset(y: isExpanded ? offset : -rect.minY + offset)
         }
