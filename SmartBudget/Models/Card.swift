@@ -12,5 +12,6 @@ struct Card: Decodable, Identifiable {
     let name: String
     let owner: String
     let type: String
+    let budgetLimit: Float32
 }
 

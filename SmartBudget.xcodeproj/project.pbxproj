@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C8F47182AB66FFF0053675D /* ExpensesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F47172AB66FFF0053675D /* ExpensesChart.swift */; };
 		3CB0B8BF2AA6AAB5003B2718 /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0B8BE2AA6AAB5003B2718 /* CardRow.swift */; };
 		3CBB969F2AA0448500392CB8 /* SmartBudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB969E2AA0448500392CB8 /* SmartBudgetApp.swift */; };
 		3CBB96A12AA0448500392CB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB96A02AA0448500392CB8 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C8F47172AB66FFF0053675D /* ExpensesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesChart.swift; sourceTree = "<group>"; };
 		3CB0B8BE2AA6AAB5003B2718 /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
 		3CBB969B2AA0448500392CB8 /* SmartBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBB969E2AA0448500392CB8 /* SmartBudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBudgetApp.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C8F47162AB66F670053675D /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				3C8F47172AB66FFF0053675D /* ExpensesChart.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		3CBB96922AA0448500392CB8 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		3CBB96B12AA2E4C700392CB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3C8F47162AB66F670053675D /* Charts */,
 				3CBB96BB2AA2E90400392CB8 /* Cards */,
 				3CBB96A02AA0448500392CB8 /* ContentView.swift */,
 			);
@@ -195,6 +206,7 @@
 				3CBB96B72AA2E54F00392CB8 /* Expense.swift in Sources */,
 				3CBB96BA2AA2E77100392CB8 /* CardExpensesDetail.swift in Sources */,
 				3CBB969F2AA0448500392CB8 /* SmartBudgetApp.swift in Sources */,
+				3C8F47182AB66FFF0053675D /* ExpensesChart.swift in Sources */,
 				3CBB96B52AA2E52F00392CB8 /* Card.swift in Sources */,
 				3CBB96BD2AA2E91C00392CB8 /* CardList.swift in Sources */,
 			);

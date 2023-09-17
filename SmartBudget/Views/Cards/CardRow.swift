@@ -45,7 +45,7 @@ struct CardRow: View {
 struct CardRow_Previews: PreviewProvider {
     static var previews: some View {
         CardRow(
-            card: Card(id: 1, name: "Mock Name", owner: "Mock Owner", type: "Gold"),
+            card: Card(id: 1, name: "Mock Name", owner: "Mock Owner", type: "Gold", budgetLimit: Float32(15000)),
             cardIndex: 0,
             isExpanded: true
         )

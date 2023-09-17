@@ -10,7 +10,6 @@ import SwiftUI
 struct CardList: View {
     @State private var cards: [Card] = []
     @State var isExpanded: Bool = false
-    @State var shouldShowCloseButton: Bool = false
     
     
     func getCards() async {
@@ -28,47 +27,40 @@ struct CardList: View {
     }
     
     var body: some View {
-        VStack(spacing: 0){
-            Text("SmartBudget")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: isExpanded ? .leading : .center)
-                .overlay(alignment: .trailing) {
-                    Button {
-                        withAnimation(
-                            .interactiveSpring(
-                                response: 0.8,
-                                dampingFraction: 0.7,
-                                blendDuration: 0.7)) {
-                                    isExpanded = false
-                                    shouldShowCloseButton = isExpanded
-                                }
-                    } label: {
-                        Image(systemName: "plus")
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background(.blue, in: Circle())
+        NavigationView {
+            VStack(spacing: 0){
+                Text("SmartBudget")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: isExpanded ? .leading : .center)
+                    .overlay(alignment: .trailing) {
+                        Button {
+                            withAnimation(
+                                .interactiveSpring(
+                                    response: 0.8,
+                                    dampingFraction: 0.7,
+                                    blendDuration: 0.7)) {
+                                        isExpanded = false
+                                    }
+                        } label: {
+                            Image(systemName: "xmark")
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background(.blue, in: Circle())
+                        }
+                        .offset(x: isExpanded ? 0 : 10)
+                        .opacity(isExpanded ? 1 : 0)
                     }
-                    .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
-                    .offset(x: isExpanded ? 0 : 10)
-                    .opacity(shouldShowCloseButton ? 1 : 0)
-                }
-                .padding(.horizontal, 15)
-                .padding(.bottom, 10)
-            
-            NavigationView {
+                    .padding(.horizontal, 15)
+                    .padding(.bottom, 10)
+                
                 VStack(spacing: 20){
                     ForEach(cards) { card in
-                        NavigationLink(destination:  CardExpensesDetail(card: card)
-                            .onAppear {
-                                shouldShowCloseButton = false
-                            }
-                            .onDisappear {
-                                shouldShowCloseButton = isExpanded
-                            }
-                        ) {
-                            CardRow(card: card, cardIndex:
-                                getCardIndex(card: card), isExpanded: isExpanded)
+                        NavigationLink(
+                            destination: CardExpensesDetail(card: card)) {
+                            CardRow(card: card,
+                                    cardIndex: getCardIndex(card: card),
+                                    isExpanded: isExpanded)
                         }
                     }
                 }.overlay{
@@ -77,7 +69,6 @@ struct CardList: View {
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.35)) {
                                 isExpanded = true
-                                shouldShowCloseButton = isExpanded
                             }
                         }
                     
@@ -85,11 +76,12 @@ struct CardList: View {
                 .padding(.top, isExpanded ? 10 : 0)
                 .coordinateSpace(name: "CARDS")
                 .offset(y: 5)
+                
             }
-        }
-        .padding([.horizontal, .top])
-        .task {
-            await getCards()
+            .padding([.horizontal, .top])
+            .task {
+                await getCards()
+            }
         }
     }
 }
