@@ -19,32 +19,24 @@ struct ExpensesChart: View {
                 HStack {
                     Text("Total Expenses: ")
                         .font(.title3)
+                        .padding(.top, 20)
                     Text("\(expenses?.reduce(0, { $0 + $1.amount}) ?? 0)")
                         .font(.callout)
+                        .padding(.top, 20)
                 }
                 
                 Chart(expenses ?? []) {
-                    BarMark(
-                        x: .value("Category", $0.category),
-                        y: .value("Amount", $0.amount)
+                    SectorMark(
+                        angle: .value("Value", $0.amount),
+                        innerRadius: .ratio(0.618),
+                        outerRadius: .inset(10),
+                        angularInset: 1
                     )
-                    
-                    RuleMark(y: .value("Card budget limit", cardBugetLimit))
-                        .foregroundStyle(.orange)
-                        .lineStyle(StrokeStyle(lineWidth: 1, dash: [5]))
-                        .annotation(alignment: .topTrailing) {
-                            Text("Budget")
-                                .font(.footnote)
-                                .foregroundColor(.orange)
-                        }
+                    .cornerRadius(4)
+                    .foregroundStyle(by: .value("Category", $0.category))
                 }
-                .frame(height: 220)
-                .chartPlotStyle { plotContent in
-                    plotContent
-                        .background(.blue.gradient.opacity(0.3))
-                        .border(.blue.gradient.opacity(0.5), width: 1)
-                    
-                }
+                .padding(.bottom, 20)
+                
             }
             .padding(.horizontal)
         }
