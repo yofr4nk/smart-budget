@@ -14,7 +14,7 @@ struct ExpensesChart: View {
     
     var body: some View {
         ZStack {
-            Color.white.edgesIgnoringSafeArea(.all)
+            Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading){
                 HStack {
                     Text("Total Expenses: ")
@@ -40,11 +40,11 @@ struct ExpensesChart: View {
             }
             .padding(.horizontal)
         }
-        .frame(height: UIScreen.main.bounds.height * 0.6)
+        .frame(height: UIScreen.main.bounds.height * 0.58)
         .transition(.move(edge: .bottom))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(color: Color.primary.opacity(0.3), radius: 10, x: 0, y: 5)
-        .padding(.horizontal)
+        .padding()
     }
 }
 

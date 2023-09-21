@@ -25,6 +25,9 @@ struct CardExpensesDetail: View {
             VStack {
                 ZStack(alignment: .bottomTrailing) {
                     CardRow(card: card, cardIndex: 0, isExpanded: true)
+                        .shadow(
+                            color: Color.primary.opacity(0.4),
+                            radius: 10, x: 0, y: 2)
                     
                     Image(systemName: "chart.xyaxis.line")
                         .resizable()
@@ -55,8 +58,8 @@ struct CardExpensesDetail: View {
                         }
                     }
                     .scrollContentBackground(.hidden)
-                    .background(.white)
                 }
+                
             }
             
             ZStack {
