@@ -42,7 +42,9 @@ struct ExpensesChart: View {
         }
         .frame(height: UIScreen.main.bounds.height * 0.6)
         .transition(.move(edge: .bottom))
-        .cornerRadius(CGFloat(30))
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .shadow(color: Color.primary.opacity(0.3), radius: 10, x: 0, y: 5)
+        .padding(.horizontal)
     }
 }
 
