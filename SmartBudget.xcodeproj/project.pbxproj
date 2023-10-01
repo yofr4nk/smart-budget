@@ -34,6 +34,7 @@
 		3CBB96B62AA2E54F00392CB8 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		3CBB96B92AA2E77100392CB8 /* CardExpensesDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpensesDetail.swift; sourceTree = "<group>"; };
 		3CBB96BC2AA2E91C00392CB8 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		3CFB9AC72AC9FB8100382449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		3CBB969D2AA0448500392CB8 /* SmartBudget */ = {
 			isa = PBXGroup;
 			children = (
+				3CFB9AC72AC9FB8100382449 /* Info.plist */,
 				3CBB96B32AA2E50000392CB8 /* Clients */,
 				3CBB96B22AA2E4EF00392CB8 /* Models */,
 				3CBB96B12AA2E4C700392CB8 /* Views */,
@@ -344,6 +346,8 @@
 				DEVELOPMENT_TEAM = 5AM66PN22C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartBudget/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -373,6 +377,8 @@
 				DEVELOPMENT_TEAM = 5AM66PN22C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartBudget/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

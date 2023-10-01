@@ -11,10 +11,9 @@ struct CardList: View {
     @State private var cards: [Card] = []
     @State var isExpanded: Bool = false
     
-    
     func getCards() async {
         do {
-            cards = try await BudgetClient.shared.fetchEntityCards(at: URL(string: "http://localhost:8080/cards")!)
+            cards = try await BudgetClient.shared.fetchEntityCards()
         } catch {
             print("Error getting cards: ", error.localizedDescription)
         }

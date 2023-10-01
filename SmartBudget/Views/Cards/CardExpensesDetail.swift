@@ -14,7 +14,7 @@ struct CardExpensesDetail: View {
     
     func getCardExpensesDetail() async {
         do {
-            expenses = try await BudgetClient.shared.fetchCardExpenses(at: URL(string: "http://localhost:8080/card/\(card.id)/expenses")!)
+            expenses = try await BudgetClient.shared.fetchCardExpenses(cardId: card.id)
         } catch {
             print("Error getting the card detail: ", error.localizedDescription)
         }
