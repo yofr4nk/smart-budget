@@ -17,10 +17,11 @@ struct ExpensesChart: View {
             Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading){
                 HStack {
+                    let totalAmount: Float? = expenses?.reduce(0, { $0 + $1.amount})
                     Text("Total Expenses: ")
                         .font(.title3)
                         .padding(.top, 20)
-                    Text("\(expenses?.reduce(0, { $0 + $1.amount}) ?? 0)")
+                    Text(String(format: "%.2f", totalAmount ?? 0))
                         .font(.callout)
                         .padding(.top, 20)
                 }
