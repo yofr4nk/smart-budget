@@ -50,3 +50,6 @@ This app is currently designed as a read-only tool for personal learning and bud
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Demo
+![smart-budget](https://github.com/user-attachments/assets/41ffdb27-a0fc-4f3e-b16b-c59c29711544)
